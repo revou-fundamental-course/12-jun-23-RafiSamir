@@ -2,6 +2,7 @@
 function convertToCelsius() {
   var fahrenheitInput = document.getElementById('fahrenheit').value;
   const explanationDiv = document.getElementById('explanation');
+  const resetButton = document.getElementById('reset-button');
 
   // Validate input
   if (fahrenheitInput === "") {
@@ -16,12 +17,19 @@ function convertToCelsius() {
               <p>Untuk mengonversi suhu dari Fahrenheit ke Celcius, kita harus mengurangi suhu dalam Fahrenheit dengan 32, kemudian kalikan dengan 5/9.</p>
               <p>Rumus : (suhu - 32) * 5/9</p>
           `;
+          resetButton.addEventListener('click', function () {
+            document.getElementById('fahrenheit').value = '';
+            explanationDiv.innerHTML = '';
+            document.getElementById('resultText').innerHTML = '';
+            
+          })
 }
 
 // Function to convert Celsius to Fahrenheit
 function convertToFahrenheit() {
   var celsiusInput = document.getElementById('celsius').value;
   const explanationDiv = document.getElementById('explanation');
+  const resetButton = document.getElementById('reset-button');
 
   // Validate input
   if (celsiusInput === "") {
@@ -36,4 +44,11 @@ function convertToFahrenheit() {
               <p>Untuk mengonversi suhu dari Celcius ke Fahrenheit, kita harus mengalikan suhu dalam Celcius dengan 9/5, kemudian tambahkan 32.</p>
               <p>Rumus : (suhu * 9/5) + 32</p>
           `;
+          resetButton.addEventListener('click', function () {
+            document.getElementById('celsius').value = '';
+            explanationDiv.innerHTML = '';
+            document.getElementById('resultText').innerHTML = '';
+            
+          })
 }
+
